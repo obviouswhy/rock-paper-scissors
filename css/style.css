@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    height: 50px;
+    margin-left: 35vw;
+    margin-top: 7vh;
+}
+.middleWrapper{
+    margin-left: 45vw; 
+    margin-top:10vh;
+}
+.resultDisplay{
+    width: 104px;
+    height: 200px;
+    
+}
+.textDisplay{
+    width:100px; 
+    height:50px; 
+    text-align: center; 
+    padding-top: 20px; 
+}
+.resultDisplay{
+    width: 250px;
+    height: 175px;
+    overflow: hidden;
+    margin-left: -75px;
+    margin-bottom: 30px;
+}
+.resultDisplay img{
+    height: auto;
+    width: 400px;
+    margin-left: -65px;
+    display: none;
+}
+#rock{
+    margin-top: 0px;
+    display: block;
+}
+#paper{
+    margin-top: -181px;
+    display: block;
+}
+#scissors{
+    margin-top: -355px;
+    display:block;
+}
+#rpsResult{
+    display:block;
+}
+.inputContainer{
+    margin-left: -60px;
+}
+.hidden{
+    display: none;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="showResult"></h1>
+    <div class="middleWrapper">
+        <div class="resultDisplay">
+            <img class="resultImg" src="assets/images/rockpaperscissors.jpg" alt="">
+        </div>
+        <div class="textDisplay">
+            <label id="rpsResult"></label>
+        </div>
+        <div class="inputContainer" style="display:inline-block">
+            <label for="playerChoice" style="margin:2px -2px;">Write your Rock,Paper,Scissors choice...</label><br>
+            <input type="text" name="playerChoice" id="player" placeholder="What will be your choice?">
+        </div>
+        <button onclick="playRound(document.getElementById('player').value,computerPlay());">Bring it on!</button>
+    </div>
+</body>
+<script src="js/main.js"></script>
+</html>
