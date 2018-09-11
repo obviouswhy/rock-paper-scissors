@@ -85,13 +85,15 @@ body{
     grid-column: 2/3;
     grid-row: 2/3;
     /*border: .5px solid steelblue;*/
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock Player.png");*/
     background: url("/assets/images/Rock Player.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 .rockPlayer:hover{
-    background: url("/assets/images/Rock Player Title.png");
-    background-size: contain;
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock Player Title.png");
+    /*background*/: url("/asse//*images/Rock Player Title.png");*/
+    background-se: contain;
     background-repeat: no-repeat;
 }
 .paperPlayer{
@@ -99,11 +101,13 @@ body{
     grid-column: 3/4;
     grid-row: 3/4;
     /*border: .5px solid steelblue;*/
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Paper Player.png");*/
     background: url("/assets/images/Paper Player.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 .paperPlayer:hover{
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Paper\ Player\ Title.png");*/
     background: url("/assets/images/Paper\ Player\ Title.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -113,31 +117,49 @@ body{
     grid-column: 2/3;
     grid-row: 4/5;
     /*border: .5px solid steelblue;*/
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Scissors Player.png");*/
     background: url("/assets/images/Scissors Player.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 .scissorsPlayer:hover{
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Scissors\ Player\ Title.png");*/
     background: url("/assets/images/Scissors\ Player\ Title.png");
     background-size: contain;
     background-repeat: no-repeat;
+}
+.invert{
+    filter: invert(100%);
 }
 .rockPC{
     box-sizing: border-box;
     grid-column: 6/7;
     grid-row: 2/3;
     /*border: .5px solid steelblue;*/
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock PC.png");*/
     background: url("/assets/images/Rock PC.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+.rockPC:hover{
+    /*background: url("https://my.mixtape.moe/ktyqux.png");*/
+    background: url("/assets/images/Scissors\ PC\ Title.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .paperPC{
     box-sizing: border-box;
     grid-column: 5/6;
     grid-row: 3/4;
     /*border: .5px solid steelblue;*/
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Paper PC.png");*/
     background: url("/assets/images/Paper PC.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.paperPC:hover{
+    /*background: url("https://my.mixtape.moe/vcfelf.png");*/
+    background: url("/assets/images/Scissors\ PC\ Title.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -146,7 +168,14 @@ body{
     grid-column: 6/7;
     grid-row: 4/5;
     /*border: .5px solid steelblue;*/
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Scissors PC.png");*/
     background: url("/assets/images/Scissors PC.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.scissorsPC:hover{
+    /*background: url("https://my.mixtape.moe/ojlier.png");*/
+    background: url("/assets/images/Scissors\ PC\ Title.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
