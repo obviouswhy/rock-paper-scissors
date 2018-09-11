@@ -91,9 +91,9 @@ body{
     background-repeat: no-repeat;
 }
 .rockPlayer:hover{
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock Player Title.png");
-    /*background*/: url("/asse//*images/Rock Player Title.png");*/
-    background-se: contain;
+    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock Player Title.png");*/
+    background: url("/assets//*images/Rock Player Title.png");
+    background-size: contain;
     background-repeat: no-repeat;
 }
 .paperPlayer{
