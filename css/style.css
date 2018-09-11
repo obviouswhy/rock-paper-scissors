@@ -143,7 +143,7 @@ body{
 }
 .rockPC:hover{
     /*background: url("https://my.mixtape.moe/ktyqux.png");*/
-    background: url("/assets/images/Scissors\ PC\ Title.png");
+    background: url("/assets/images/Rock\ PC\ Title.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -159,7 +159,7 @@ body{
 }
 .paperPC:hover{
     /*background: url("https://my.mixtape.moe/vcfelf.png");*/
-    background: url("/assets/images/Scissors\ PC\ Title.png");
+    background: url("/assets/images/Paper\ PC\ Title.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
