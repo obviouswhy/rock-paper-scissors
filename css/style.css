@@ -80,114 +80,129 @@ body{
     grid-template-rows: repeat(5, 1fr);
     grid-row-gap: 15px;
 }
-.rockPlayer{
-    box-sizing: border-box;
-    grid-column: 2/3;
+.rules{
+    grid-column: 7/8;
+    margin-top: 10px;
+    margin-left: 35%;
+}
+.rules a,i{
+    color: #3339;
+    text-decoration: none;
+}
+.rules a{
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+.rules:hover *{
+    color: #1A73E8;    
+}
+.pcHeader{
+    grid-column: 4/5;
+    grid-row: 1/2;
+    font-size: 32px;
+}
+.header{
+    text-align: center;
+    margin: auto;
+    color: #0009;
+    font-family: 'Oswald', sans-serif;
+}
+.computerChoice{
+    grid-column: 4/5;
     grid-row: 2/3;
-    /*border: .5px solid steelblue;*/
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock Player.png");*/
-    background: url("/assets/images/Rock Player.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.rockPlayer:hover{
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock Player Title.png");*/
-    background: url("/assets/images/Rock Player Title.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.paperPlayer{
+    border: .5px solid #3336;
+    background: whitesmoke;
     box-sizing: border-box;
+    margin: auto;
+    height: 140px;
+    width: 140px;
+}
+.computerChoice>i{
+    font-size: 100px;
+    margin-left: 28px;
+    margin-top: 15px;
+    color: #0009;
+}
+.vsHeader{
+    grid-column: 4/5;
+    grid-row: 3/4;
+    font-size: 40px;
+    font-weight: normal;
+}
+.tabsContainer{
+    grid-column: 3/6;
+    grid-row: 4/5;
+    margin-left: -40px;
+}
+.tabsList{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+}
+.tabsList>li{
+    display: inline-block;
+}
+div>label:hover{
+    cursor: pointer;
+    color: #3339;
+}
+input[type=radio]{
+    display: none;
+}
+.rock{
+    grid-column: 1/2;
+    margin: auto;
+}
+.paper{
+    grid-column: 2/3;
+    margin: auto;
+}
+.scissors{
     grid-column: 3/4;
-    grid-row: 3/4;
-    /*border: .5px solid steelblue;*/
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Paper Player.png");*/
-    background: url("/assets/images/Paper Player.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin: auto;
 }
-.paperPlayer:hover{
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Paper\ Player\ Title.png");*/
-    background: url("/assets/images/Paper\ Player\ Title.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+div>label{
+    font-size: 75px;
+    color: #3336;
 }
-.scissorsPlayer{
-    box-sizing: border-box;
-    grid-column: 2/3;
-    grid-row: 4/5;
-    /*border: .5px solid steelblue;*/
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Scissors Player.png");*/
-    background: url("/assets/images/Scissors Player.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+.tabsContainer .tabsList input[type=radio]:checked + label {
+    color: #1A73E8;
 }
-.scissorsPlayer:hover{
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Scissors\ Player\ Title.png");*/
-    background: url("/assets/images/Scissors\ Player\ Title.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+
+/*--------------------------------------buttons--------------------------------------*/
+.play-btn{
+    grid-column: 4/5;
+    grid-row: 5/6;
+    border: .5px solid #3336;
+    font-size: 18px;
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    text-align: center;
 }
-.invert{
-    filter: invert(100%);
-}
-.rockPC{
-    box-sizing: border-box;
-    grid-column: 6/7;
-    grid-row: 2/3;
-    /*border: .5px solid steelblue;*/
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Rock PC.png");*/
-    background: url("/assets/images/Rock PC.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.rockPC:hover{
-    /*background: url("https://my.mixtape.moe/ktyqux.png");*/
-    background: url("/assets/images/Rock\ PC\ Title.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.paperPC{
-    box-sizing: border-box;
-    grid-column: 5/6;
-    grid-row: 3/4;
-    /*border: .5px solid steelblue;*/
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Paper PC.png");*/
-    background: url("/assets/images/Paper PC.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.paperPC:hover{
-    /*background: url("https://my.mixtape.moe/vcfelf.png");*/
-    background: url("/assets/images/Paper\ PC\ Title.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.scissorsPC{
-    box-sizing: border-box;
-    grid-column: 6/7;
-    grid-row: 4/5;
-    /*border: .5px solid steelblue;*/
-    /*background: url("/home/brew/Programming/The Odin Project/Other/rockPaperScissors/assets/images/Scissors PC.png");*/
-    background: url("/assets/images/Scissors PC.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.scissorsPC:hover{
-    /*background: url("https://my.mixtape.moe/ojlier.png");*/
-    background: url("/assets/images/Scissors\ PC\ Title.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.rockPlayer, .paperPlayer, .scissorsPlayer, .rockPC, .paperPC, .scissorsPC{
-    min-width: 80px;
-    margin-bottom: 5px;
-}
-.rockPlayer:hover, .paperPlayer:hover, .scissorsPlayer:hover,.rockPC:hover, .paperPC:hover, .scissorsPC:hover{
-    transform: scale(1.4);
-    transition: .15s;
+.play-btn:hover{
+    cursor: pointer;
 }
 /*--------------------------------------footer--------------------------------------*/
-footer{
-    background-color: #35323299;
+.footer{
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.footer *{
+    grid-column: 4/5;
+    margin: auto;
+    margin-right: 25px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: bolder;
+    font-size: 13px;
+}
+.footer a{
+    color: #1A73E8;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.footer a:hover{
+    color: rgb(24, 101, 202);
 }
