@@ -28,12 +28,24 @@
         </div>
         <div class="main">
             <div class="rules">
-                <i class="fas fa-info-circle"></i>
-                <a href="#">Rules</a>           
+                <!--<i class="fas fa-info-circle"></i>
+                <a href="#">Rules</a>-->
+                <label class="fa fa-info-circle"> Rules</label>   
+                <div class="popup">
+                        A player who decides to play rock will beat another player who has chosen scissors ("rock crushes scissors"), 
+                        but will lose to one who has played paper ("paper covers rock"); <br><br>
+                        A play of paper will lose to a play of scissors ("scissors cuts paper"). <br><br>
+                        If both players choose the same shape, the game is tied and is usually immediately replayed to break the tie.
+                </div>        
             </div>
             <h2 class="header pcHeader">Computer's Choice:</h2>
             <div class="computerChoice">
                     <i class="fas fa-question"></i>
+                    <div class="loader" id="loader-2">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
             </div>
             <h2 class="header vsHeader">VS</h2>
             <div class="tabsContainer">
@@ -61,12 +73,19 @@
                     </li>
                 </ul>
             </div>
-            <button class="play-btn">Play!</button>
+            <button class="play-btn" onclick="loadLoader()">Play!</button>
         </div>  
         <div class="footer">
                 <p>Project By <a href="#">Sergi Nogal</a></p>
             </div>  
     </div>
+    <script>
+    function loadLoader(){
+        document.getElementsByClassName("loader")[0].style.display="block";
+        document.getElementsByClassName("fa-question")[0].style.display="none";
+
+    }
+    </script>
 </body>
 <script src="js/main.js"></script>
 </html>
