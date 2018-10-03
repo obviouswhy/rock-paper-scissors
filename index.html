@@ -112,10 +112,11 @@
              document.getElementsByClassName("loader")[0].style.display="block";
              setTimeout(() => {
                 document.getElementsByClassName("loader")[0].style.display="none";
+                iconDisplay.classList.remove("fa-question", "fa-hand-rock", "fa-hand-scissors", "fa-hand-paper"); 
+                iconDisplay.classList.add("fa-hand-"+computer);
+                iconDisplay.setAttribute("style","margin-left:17px;");
              }, 1000);
-             iconDisplay.classList.remove("fa-question", "fa-hand-rock", "fa-hand-scissors", "fa-hand-paper"); 
-             iconDisplay.classList.add("fa-hand-"+computer);
-             iconDisplay.setAttribute("style","margin-left:17px;");
+             
 
              console.log(gameResult);
         }
