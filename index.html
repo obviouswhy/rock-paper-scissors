@@ -79,25 +79,26 @@
             <p>Project By <a href="#">Sergi Nogal</a></p>
         </div> 
         <div class="alertContainer">
-                <div class="alert red" >
-                    <span class="closebtn">&times;</span>  
-                    <i class="far fa-sad-tear"></i> Indicates a dangerous or potentially negative action.
-                </div>
-                
-                <div class="alert success" >
-                    <span class="closebtn">&times;</span>  
-                    <i class="far fa-grin-stars"></i> Indicates a successful or positive action.
-                </div>
-                <div class="alert warning" >
-                    <span class="closebtn">&times;</span>  
-                    <i class="far fa-meh"></i> Indicates a warning that might need attention.
-                </div>
-            </div>  
+            <div class="alert red" >
+                <span class="closebtn">&times;</span>  
+                <i class="far fa-sad-tear"></i> Indicates a dangerous or potentially negative action.
+            </div>
+            
+            <div class="alert success" >
+                <span class="closebtn">&times;</span>  
+                <i class="far fa-grin-stars"></i> Indicates a successful or positive action.
+            </div>
+            <div class="alert warning" >
+                <span class="closebtn">&times;</span>  
+                <i class="far fa-meh"></i> Indicates a warning that might need attention.
+            </div>
+        </div>  
     </div>
     <script>
     function playGame(){
         /*note to my future self:
         Sorry for the messy code, i'm just tired of the Rock Paper Scissors, I want to move to the next task*/
+        closeAll();
         if ( document.querySelectorAll('input[type=radio]:checked').length == 0) {
             alert('No choice selected..');
             
@@ -105,6 +106,7 @@
              var playerSel = document.querySelectorAll('input[type=radio]:checked')[0].value;
              var gameResult = playRound(playerSel,computerPlay());
              var computer = gameResult.computer;
+             var mes = gameResult.message;
            
              iconDisplay =  document.querySelector(".computerChoice i");
              iconDisplay.style.display="none";
@@ -115,13 +117,24 @@
                 iconDisplay.classList.remove("fa-question", "fa-hand-rock", "fa-hand-scissors", "fa-hand-paper"); 
                 iconDisplay.classList.add("fa-hand-"+computer);
                 iconDisplay.setAttribute("style","margin-left:17px;");
-             }, 1000);
-             
-
+                setTimeout(() => {
+                    if (mes.toLowerCase().includes("win")) {
+                        setTimeout(function(){ document.querySelector(".alert.success").style.display = "block"; }, 600); 
+                        document.querySelector(".alert.success").style.opacity="1";
+                        //document.querySelector(".alert", ".success").setAttribute("style","display:block");
+                    }else if(mes.toLowerCase().includes("lose")){
+                        setTimeout(function(){ document.querySelector(".alert.red").style.display = "block"; }, 600); 
+                        document.querySelector(".alert.red").style.opacity="1";
+                        //document.querySelector(".alert", ".red").setAttribute("style","display:block");
+                    }else if (mes.toLowerCase().includes("tie")) {
+                        setTimeout(function(){ document.querySelector(".alert.warning").style.display = "block"; }, 600); 
+                        document.querySelector(".alert.warning").style.opacity="1";
+                        //document.querySelector(".alert", ".warning").setAttribute("style","display:block");
+                    } 
+                }, 200);
+            }, 1000); 
              console.log(gameResult);
         }
-        //document.getElementsByClassName("alert red")[0].setAttribute("style", "display:block; opacity:1;");
-
     }
     </script>
 </body>
