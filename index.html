@@ -24,7 +24,7 @@
                         <h1 id="titleSeparator3">|</h1>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="main">
             <div class="rules">
@@ -52,37 +52,74 @@
                 <ul class="tabsList">
                     <li class="rock">
                         <div>
-                            <input type="radio" name="tabs" id="rockP"/>
+                            <input type="radio" name="tabs" id="rockP" value="rock"/>
                             <!--<label for="rockPC">Rock</label>-->
                             <label for="rockP" class="far fa-hand-rock"></label>
                         </div>
                     </li>
                     <li class="paper">
                         <div>
-                            <input type="radio" name="tabs" id="paperP" />
+                            <input type="radio" name="tabs" id="paperP" value="paper"/>
                             <!--<label for="paperPC">Paper</label>-->                
                             <label for="paperP" class="far fa-hand-paper"></label>
                         </div>       
                     </li>
                     <li class="scissors">
                         <div>
-                            <input type="radio" name="tabs" id="scissorsP" />
+                            <input type="radio" name="tabs" id="scissorsP" value="scissors"/>
                             <!--<label for="scissorsPC">Scissors</label>-->
                             <label for="scissorsP" class="far fa-hand-scissors"></label>
                         </div>
                     </li>
                 </ul>
             </div>
-            <button class="play-btn" onclick="loadLoader()">Play!</button>
+            <button class="play-btn" onclick="playGame()">Play!</button>
         </div>  
         <div class="footer">
-                <p>Project By <a href="#">Sergi Nogal</a></p>
+            <p>Project By <a href="#">Sergi Nogal</a></p>
+        </div> 
+        <div class="alertContainer">
+                <div class="alert red" >
+                    <span class="closebtn">&times;</span>  
+                    <i class="far fa-sad-tear"></i> Indicates a dangerous or potentially negative action.
+                </div>
+                
+                <div class="alert success" >
+                    <span class="closebtn">&times;</span>  
+                    <i class="far fa-grin-stars"></i> Indicates a successful or positive action.
+                </div>
+                <div class="alert warning" >
+                    <span class="closebtn">&times;</span>  
+                    <i class="far fa-meh"></i> Indicates a warning that might need attention.
+                </div>
             </div>  
     </div>
     <script>
-    function loadLoader(){
-        document.getElementsByClassName("loader")[0].style.display="block";
-        document.getElementsByClassName("fa-question")[0].style.display="none";
+    function playGame(){
+        /*note to my future self:
+        Sorry for the messy code, i'm just tired of the Rock Paper Scissors, I want to move to the next task*/
+        if ( document.querySelectorAll('input[type=radio]:checked').length == 0) {
+            alert('No choice selected..');
+            
+        }else{
+             var playerSel = document.querySelectorAll('input[type=radio]:checked')[0].value;
+             var gameResult = playRound(playerSel,computerPlay());
+             var computer = gameResult.computer;
+           
+             iconDisplay =  document.querySelector(".computerChoice i");
+             iconDisplay.style.display="none";
+
+             document.getElementsByClassName("loader")[0].style.display="block";
+             setTimeout(() => {
+                document.getElementsByClassName("loader")[0].style.display="none";
+             }, 1000);
+             iconDisplay.classList.remove("fa-question", "fa-hand-rock", "fa-hand-scissors", "fa-hand-paper"); 
+             iconDisplay.classList.add("fa-hand-"+computer);
+             iconDisplay.setAttribute("style","margin-left:17px;");
+
+             console.log(gameResult);
+        }
+        //document.getElementsByClassName("alert red")[0].setAttribute("style", "display:block; opacity:1;");
 
     }
     </script>

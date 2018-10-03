@@ -31,16 +31,16 @@ function playRound(playerSelection,computerSelection){
             case 'rock':
                 switch (computerSelection) {
                     case 'rock':
-                        console.log("It's a tie, go again");
-                        displayResult("It's a tie, go again");
+                        res = "It's a tie, go again";
+                        console.log(res);
                         break;
                     case 'paper':
-                        console.log("Paper wins Rock... you LOSE!");
-                        displayResult("Paper wins Rock... you LOSE!");
+                        res = "Paper wins Rock... you LOSE!";
+                        console.log(res);
                         break;
                     case 'scissors':
-                        console.log("Rock wins Scissors... you WIN!");
-                        displayResult("Rock wins Scissors... you WIN!");
+                        res = "Rock wins Scissors... you WIN!";
+                        console.log(res);
                         break;
                     default:
                         break;
@@ -49,16 +49,16 @@ function playRound(playerSelection,computerSelection){
             case 'paper':
                 switch (computerSelection) {
                     case 'rock':
-                        console.log("Paper wins Rock... you WIN!");
-                        displayResult("Paper wins Rock... you WIN!");
+                        res = "Paper wins Rock... you WIN!"
+                        console.log(res);
                         break;
                     case 'paper':
-                        console.log("It's a tie, go again");
-                        displayResult("It's a tie, go again");
+                        res = "It's a tie, go again";
+                        console.log(res);
                         break;
                     case 'scissors':
-                        console.log("Scissors wins Paper... you LOSE!");
-                        displayResult("Scissors wins Paper... you LOSE!");
+                        res = "Scissors wins Paper... you LOSE!";
+                        console.log(res);
                         break;
                     default:
                         break;
@@ -67,16 +67,16 @@ function playRound(playerSelection,computerSelection){
             case 'scissors':
             switch (computerSelection) {
                     case 'rock':
-                        console.log("Rock wins Scissors... you LOSE!");
-                        displayResult("Rock wins Scissors... you LOSE!");
+                        res = "Rock wins Scissors... you LOSE!"
+                        console.log(res);
                         break;
                     case 'paper':
-                        console.log("Scissors wins paper... you WIN!");
-                        displayResult("Scissors wins paper... you WIN!");
+                        res = "Scissors wins paper... you WIN!";
+                        console.log(res);
                         break;
                     case 'scissors':
-                        console.log("It's a tie, go again");
-                        displayResult("It's a tie, go again");
+                        res = "It's a tie, go again";
+                        console.log(res);
                         break;
                     default:
                         break;
@@ -85,28 +85,31 @@ function playRound(playerSelection,computerSelection){
             default:
                 break;
         }
-        changeLabel(computerSelection + "!");
-        changeImgResult(computerSelection.toLowerCase());
+        var gameInfo = {
+          player:  playerSelection,
+          computer: computerSelection,
+          message: res
+        }
+        return gameInfo;
     }
 }
-function displayResult(res){
-    document.getElementsByTagName('h1')[0].innerHTML= res;
+
+ /* funcion for closing the alert */ 
+
+var close = document.getElementsByClassName("closebtn");
+var j;
+
+for (j = 0; j < close.length; j++) {
+    close[j].onclick = function(){
+        closeAll();
+    }
 }
-function changeLabel(res){
-    document.getElementById("rpsResult").innerHTML=res;
-}
-function changeImgResult(res){
-    var img = document.getElementsByClassName("resultImg");
-    //console.log(img[0]);
-    switch(res){
-        case "Rock".toLowerCase():
-            img[0].setAttribute('id','rock');
-            break;
-        case "Paper".toLowerCase():
-            img[0].setAttribute('id','paper');
-            break;
-        case "Scissors".toLowerCase():
-            img[0].setAttribute('id','scissors');
-            break;
-    } 
+
+var alerts = document.getElementsByClassName("alert");
+
+function closeAll(){
+        for (let b = 0; b < alerts.length; b++) {
+            alerts[b].style.opacity = "0";
+            setTimeout(function(){ alerts[b].style.display = "none"; }, 600);  
+        }
 }
