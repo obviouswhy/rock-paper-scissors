@@ -79,18 +79,18 @@
             <p>Project By <a href="#">Sergi Nogal</a></p>
         </div> 
         <div class="alertContainer">
-            <div class="alert red" >
+            <div class="alert red" style="display:none" >
                 <span class="closebtn">&times;</span>  
-                <i class="far fa-sad-tear"></i> Indicates a dangerous or potentially negative action.
+                <i class="far fa-sad-tear"></i><p> Indicates a dangerous or potentially negative action.</p>
             </div>
             
-            <div class="alert success" >
+            <div class="alert success" style="display:none">
                 <span class="closebtn">&times;</span>  
-                <i class="far fa-grin-stars"></i> Indicates a successful or positive action.
+                <i class="far fa-grin-stars"></i><p> Indicates a successful or positive action.</p>
             </div>
-            <div class="alert warning" >
+            <div class="alert warning" style="display:none">
                 <span class="closebtn">&times;</span>  
-                <i class="far fa-meh"></i> Indicates a warning that might need attention.
+                <i class="far fa-meh"></i><p> Indicates a warning that might need attention.</p>
             </div>
         </div>  
     </div>
@@ -117,21 +117,28 @@
                 iconDisplay.classList.remove("fa-question", "fa-hand-rock", "fa-hand-scissors", "fa-hand-paper"); 
                 iconDisplay.classList.add("fa-hand-"+computer);
                 iconDisplay.setAttribute("style","margin-left:17px;");
-                setTimeout(() => {
-                    if (mes.toLowerCase().includes("win")) {
-                        setTimeout(function(){ document.querySelector(".alert.success").style.display = "block"; }, 600); 
-                        document.querySelector(".alert.success").style.opacity="1";
-                        //document.querySelector(".alert", ".success").setAttribute("style","display:block");
-                    }else if(mes.toLowerCase().includes("lose")){
-                        setTimeout(function(){ document.querySelector(".alert.red").style.display = "block"; }, 600); 
-                        document.querySelector(".alert.red").style.opacity="1";
-                        //document.querySelector(".alert", ".red").setAttribute("style","display:block");
-                    }else if (mes.toLowerCase().includes("tie")) {
-                        setTimeout(function(){ document.querySelector(".alert.warning").style.display = "block"; }, 600); 
-                        document.querySelector(".alert.warning").style.opacity="1";
-                        //document.querySelector(".alert", ".warning").setAttribute("style","display:block");
-                    } 
-                }, 200);
+                if (mes.includes("WIN")) {
+                    setTimeout(function(){ document.querySelector(".alert.success").style.display = "block"; }, 100); 
+                    document.querySelector(".alert.success").style.opacity="1";
+                    document.querySelector(".alert.success > p").innerHTML = mes;
+                    setTimeout(() => {
+                        closeAll();
+                    }, 4000);
+                }else if(mes.includes("LOSE")){
+                    setTimeout(function(){ document.querySelector(".alert.red").style.display = "block"; }, 100); 
+                    document.querySelector(".alert.red").style.opacity="1";
+                    document.querySelector(".alert.red > p").innerHTML = mes;
+                    setTimeout(() => {
+                        closeAll();
+                    }, 4000);
+                }else if (mes.includes("TIE")) {
+                    setTimeout(function(){ document.querySelector(".alert.warning").style.display = "block"; }, 100); 
+                    document.querySelector(".alert.warning").style.opacity="1";
+                    document.querySelector(".alert.warning > p").innerHTML = mes;
+                    setTimeout(() => {
+                        closeAll();
+                    }, 4000);
+                }
             }, 1000); 
              console.log(gameResult);
         }

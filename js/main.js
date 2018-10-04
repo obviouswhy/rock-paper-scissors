@@ -31,7 +31,7 @@ function playRound(playerSelection,computerSelection){
             case 'rock':
                 switch (computerSelection) {
                     case 'rock':
-                        res = "It's a tie, go again";
+                        res = "It's a TIE, go again";
                         console.log(res);
                         break;
                     case 'paper':
@@ -53,7 +53,7 @@ function playRound(playerSelection,computerSelection){
                         console.log(res);
                         break;
                     case 'paper':
-                        res = "It's a tie, go again";
+                        res = "It's a TIE, go again";
                         console.log(res);
                         break;
                     case 'scissors':
@@ -75,7 +75,7 @@ function playRound(playerSelection,computerSelection){
                         console.log(res);
                         break;
                     case 'scissors':
-                        res = "It's a tie, go again";
+                        res = "It's a TIE, go again";
                         console.log(res);
                         break;
                     default:
