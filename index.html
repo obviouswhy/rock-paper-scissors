@@ -107,6 +107,7 @@
              var gameResult = playRound(playerSel,computerPlay());
              var computer = gameResult.computer;
              var mes = gameResult.message;
+             var aa = mes.substring(mes.indexOf("WIN")); 
            
              iconDisplay =  document.querySelector(".computerChoice i");
              iconDisplay.style.display="none";
@@ -118,28 +119,20 @@
                 iconDisplay.classList.add("fa-hand-"+computer);
                 iconDisplay.setAttribute("style","margin-left:17px;");
                 if (mes.includes("WIN")) {
-                    setTimeout(function(){ document.querySelector(".alert.success").style.display = "block"; }, 100); 
                     document.querySelector(".alert.success").style.opacity="1";
+                    setTimeout(function(){ document.querySelector(".alert.success").style.display = "block"; }, 100); 
                     document.querySelector(".alert.success > p").innerHTML = mes;
-                    setTimeout(() => {
-                        closeAll();
-                    }, 4000);
                 }else if(mes.includes("LOSE")){
-                    setTimeout(function(){ document.querySelector(".alert.red").style.display = "block"; }, 100); 
                     document.querySelector(".alert.red").style.opacity="1";
+                    setTimeout(function(){ document.querySelector(".alert.red").style.display = "block"; }, 100); 
                     document.querySelector(".alert.red > p").innerHTML = mes;
-                    setTimeout(() => {
-                        closeAll();
-                    }, 4000);
                 }else if (mes.includes("TIE")) {
-                    setTimeout(function(){ document.querySelector(".alert.warning").style.display = "block"; }, 100); 
                     document.querySelector(".alert.warning").style.opacity="1";
+                    setTimeout(function(){ document.querySelector(".alert.warning").style.display = "block"; }, 100); 
                     document.querySelector(".alert.warning > p").innerHTML = mes;
-                    setTimeout(() => {
-                        closeAll();
-                    }, 4000);
                 }
             }, 1000); 
+             closeTimer();
              console.log(gameResult);
         }
     }

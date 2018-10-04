@@ -105,11 +105,10 @@ for (j = 0; j < close.length; j++) {
     }
 }
 
-var alerts = document.getElementsByClassName("alert");
-
+var alerts = document.querySelectorAll(".alert");
 function closeAll(){
-        for (let b = 0; b < alerts.length; b++) {
-            alerts[b].style.opacity = "0";
-            setTimeout(function(){ alerts[b].style.display = "none"; }, 600);  
-        }
+    for (let b = 0; b < alerts.length; b++) {
+        alerts[b].style.opacity = "0";
+        setTimeout(function(){ alerts[b].style.display = "none"; }, 600);  
+    }    
 }
